@@ -1,6 +1,6 @@
 <template>
     <div>
-        <footer class="bg-gray-900 ">
+        <footer class="bg-gradient-to-r from-sky-500 to-indigo-500">
             <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
                 <div class="flex justify-center text-teal-600 dark:text-teal-300">
                     <svg class="h-8" viewBox="0 0 118 24" fill="none" xmlns="http://www.w3.org/2000/svg">

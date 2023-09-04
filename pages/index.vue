@@ -1,7 +1,18 @@
+<script setup>
+const { data: posts } = await useAsyncData('latest-posts', () =>
+  queryContent('/blog')
+    .sort({ data: 1 })
+    .limit(3)
+    .find()
+)
+</script>
+
+
 <template>
-    <section class="text-white py-2">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 mt-8 ">
+    <section class="text-gray-900 py-2 ">
         <h1 class="text-5xl font-bold">Hello, I am Famid hasan konok</h1>
-        <p class="text-base text-gray-300 p-2 italic">Spring Devloper Advocate at VMware</p>
+        <p class="text-base text-gray-700 p-2 italic">Spring Devloper Advocate at VMware</p>
     </section>
     <section class="flex flex-col md:flex-row">
         <div class="md:w-3/4">
@@ -22,11 +33,15 @@
         <img src="~/assets/images/portfolioImg.png" alt="MyPhoto" class="w-1/2 md:max-w-sm p-8 mx-auto">
     </section>
 
-    <section class="text-3xl font-bold mt-8 ">Latest Bolg Posts</section>
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold mt-8">Latest Blog Posts</h2>
+            <div class="grid md:grid-cols-3 pt-8 gap-10">
+              <Post :posts="posts" />
+            </div>
+          </section>
+        
+    </div>
+
 </template>
-
-<script setup>
-
-</script>
 
 <style  scoped></style>
